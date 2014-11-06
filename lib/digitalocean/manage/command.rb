@@ -2,7 +2,7 @@ module Digitalocean
   module Manage
     class Command < Acclimate::Command
 
-      autoload :Droplet, 'digitalocean/manage/command/droplet'
+      extend Autoloaded
 
     protected
 

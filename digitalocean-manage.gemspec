@@ -23,6 +23,7 @@ Gem::Specification.new do |spec|
   spec.add_development_dependency "rake", "~> 10.0"
 
   spec.add_dependency "acclimate"
+  spec.add_dependency "autoloaded"
   spec.add_dependency "droplet_kit"
   spec.add_dependency "hashie"
   spec.add_dependency "command_line_reporter"

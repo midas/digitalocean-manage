@@ -4,8 +4,7 @@ module Digitalocean
   module Manage
     class Formatter
 
-      autoload :Droplet,  'digitalocean/manage/formatter/droplet'
-      autoload :Droplets, 'digitalocean/manage/formatter/droplets'
+      extend Autoloaded
 
       include CommandLineReporter
 

@@ -2,7 +2,7 @@ module Digitalocean
   module Manage
     class Cli < Thor
 
-      autoload :Droplet, 'digitalocean/manage/cli/droplet'
+      extend Autoloaded
 
       include Acclimate::CliHelper
 

@@ -5,7 +5,7 @@ module Digitalocean
     class Command
       module Droplet
 
-        autoload :List, 'digitalocean/manage/command/droplet/list'
+        extend Autoloaded
 
       end
     end
