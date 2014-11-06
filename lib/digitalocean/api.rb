@@ -7,6 +7,10 @@ module Digitalocean
       @droplets ||= client.droplets.all.to_a
     end
 
+    def image( id_or_slug )
+      client.images.find( id: id_or_slug )
+    end
+
     def images
       @images ||= client.images.all.to_a
     end

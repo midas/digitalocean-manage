@@ -17,6 +17,13 @@ module Digitalocean
           execute Digitalocean::Manage::Command::Image::List
         end
 
+        desc "image find", "Find and image by id or slug"
+        #long_desc <<-LONGDESC
+        #LONGDESC
+        def find( id_or_slug )
+          execute Digitalocean::Manage::Command::Image::Find, id_or_slug: id_or_slug
+        end
+
       end
     end
   end
