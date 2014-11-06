@@ -2,8 +2,8 @@ require 'forwardable'
 
 module Digitalocean
   module Manage
-    class Formatter
-      class Droplet < Digitalocean::Manage::Formatter
+    module Formatter
+      class Droplet < Acclimate::Formatter
 
         extend Forwardable
 

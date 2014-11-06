@@ -1,7 +1,7 @@
 module Digitalocean
   module Manage
-    class Formatter
-      class Droplets < Digitalocean::Manage::Formatter
+    module Formatter
+      class Droplets < Acclimate::Formatter
 
         def initialize( droplets )
           @droplets = droplets

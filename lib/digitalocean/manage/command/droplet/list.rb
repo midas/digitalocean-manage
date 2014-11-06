@@ -5,7 +5,6 @@ module Digitalocean
         class List < Digitalocean::Manage::Command
 
           include Digitalocean::Api
-          include Digitalocean::Manage::ShellHelper
 
           def execute
             confirm "Getting droplets list from Digital Ocean" do
