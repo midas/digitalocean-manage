@@ -12,6 +12,9 @@ module Digitalocean
       desc 'image SUBCOMMAND', "Operations performed on images"
       subcommand "image", Digitalocean::Manage::Cli::Image
 
+      desc 'key SUBCOMMAND', "Operations performed on keys"
+      subcommand "key", Digitalocean::Manage::Cli::Key
+
       desc 'region SUBCOMMAND', "Operations performed on regions"
       subcommand "region", Digitalocean::Manage::Cli::Region
 

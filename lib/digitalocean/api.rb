@@ -15,6 +15,10 @@ module Digitalocean
       @images ||= client.images.all.to_a
     end
 
+    def keys
+      @keys ||= client.ssh_keys.all.to_a
+    end
+
     def regions
       @regions ||= client.regions.all.to_a
     end
