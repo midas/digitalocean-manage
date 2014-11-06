@@ -10,6 +10,13 @@ module Digitalocean
           "#{basename} #{command.usage}"
         end
 
+        desc "droplet find", "Find a droplet by id or name"
+        #long_desc <<-LONGDESC
+        #LONGDESC
+        def find
+          execute Digitalocean::Manage::Command::Droplet::Find
+        end
+
         desc "droplet list", "List all droplets"
         #long_desc <<-LONGDESC
         #LONGDESC
