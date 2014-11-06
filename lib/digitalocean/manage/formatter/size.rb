@@ -3,7 +3,7 @@ require 'forwardable'
 module Digitalocean
   module Manage
     module Formatter
-      class Size < Acclimate::Formatter
+      class Size < EntityTableFormatter
 
         extend Forwardable
 
@@ -11,28 +11,11 @@ module Digitalocean
           @size = size
         end
 
-        def render
-          renderred
-        end
-
       protected
 
         attr_reader :size
 
         def_delegators :size, :slug, :price_monthly, :price_hourly, :transfer
-
-        def renderred
-          @renderred ||= capture do
-            table do
-              attributes.each do |attr|
-                row do
-                  column attr, width: col_width, align: 'right', color: :cyan
-                  column send( attr ), width: 50
-                end
-              end
-            end
-          end
-        end
 
         def attributes
           %w(

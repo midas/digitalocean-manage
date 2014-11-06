@@ -3,7 +3,7 @@ require 'forwardable'
 module Digitalocean
   module Manage
     module Formatter
-      class Region < Acclimate::Formatter
+      class Region < EntityTableFormatter
 
         extend Forwardable
 
@@ -11,28 +11,11 @@ module Digitalocean
           @region = region
         end
 
-        def render
-          renderred
-        end
-
       protected
 
         attr_reader :region
 
         def_delegators :region, :name, :available, :slug
-
-        def renderred
-          @renderred ||= capture do
-            table do
-              attributes.each do |attr|
-                row do
-                  column attr, width: col_width, align: 'right', color: :cyan
-                  column send( attr ), width: 50
-                end
-              end
-            end
-          end
-        end
 
         def attributes
           %w(

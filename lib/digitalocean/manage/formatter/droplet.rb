@@ -3,7 +3,7 @@ require 'forwardable'
 module Digitalocean
   module Manage
     module Formatter
-      class Droplet < Acclimate::Formatter
+      class Droplet < EntityTableFormatter
 
         extend Forwardable
 
@@ -11,28 +11,11 @@ module Digitalocean
           @droplet = droplet
         end
 
-        def render
-          renderred
-        end
-
       protected
 
         attr_reader :droplet
 
         def_delegators :droplet, :name, :id, :status, :memory, :vcpus, :disk, :locked, :created_at, :region, :image, :networks, :size
-
-        def renderred
-          @renderred ||= capture do
-            table do
-              attributes.each do |attr|
-                row do
-                  column attr, width: col_width, align: 'right', color: :cyan
-                  column send( attr ), width: 50
-                end
-              end
-            end
-          end
-        end
 
         def attributes
           %w(
