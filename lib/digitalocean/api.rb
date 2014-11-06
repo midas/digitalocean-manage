@@ -7,6 +7,10 @@ module Digitalocean
       @droplets ||= client.droplets.all.to_a
     end
 
+    def images
+      @images ||= client.images.all.to_a
+    end
+
     def regions
       @regions ||= client.regions.all.to_a
     end
